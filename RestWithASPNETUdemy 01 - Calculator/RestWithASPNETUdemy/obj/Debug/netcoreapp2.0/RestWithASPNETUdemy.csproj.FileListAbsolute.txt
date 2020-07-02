@@ -18,4 +18,3 @@ C:\Users\700019\Documents\GitHub\RestWithASP-NETUdemy\RestWithASPNETUdemy 01 - C
 C:\Users\700019\Documents\GitHub\RestWithASP-NETUdemy\RestWithASPNETUdemy 01 - Calculator\RestWithASPNETUdemy\bin\Debug\netcoreapp2.0\RestWithASPNETUdemy.runtimeconfig.dev.json
 C:\Users\700019\Documents\GitHub\RestWithASP-NETUdemy\RestWithASPNETUdemy 01 - Calculator\RestWithASPNETUdemy\bin\Debug\netcoreapp2.0\RestWithASPNETUdemy.dll
 C:\Users\700019\Documents\GitHub\RestWithASP-NETUdemy\RestWithASPNETUdemy 01 - Calculator\RestWithASPNETUdemy\bin\Debug\netcoreapp2.0\RestWithASPNETUdemy.pdb
-C:\Users\700019\Documents\GitHub\RestWithASP-NETUdemy\RestWithASPNETUdemy 01 - Calculator\RestWithASPNETUdemy\obj\Debug\netcoreapp2.0\RestWithASPNETUdemy.csprojAssemblyReference.cache
