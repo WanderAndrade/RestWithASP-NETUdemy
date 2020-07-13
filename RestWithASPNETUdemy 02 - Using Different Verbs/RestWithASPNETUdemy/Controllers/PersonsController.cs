@@ -7,7 +7,7 @@ namespace RestWithASPNETUdemy.Controllers
     [Route("api/[controller]")]
     public class PersonsController : Controller
     {
-        private IPersonService _personService;
+        private IPersonService _personService; //o underline torna desnecessário o uso do "this" para diferenciar variáveis locais das outras
         public PersonsController(IPersonService personService)
         {
             _personService = personService;
