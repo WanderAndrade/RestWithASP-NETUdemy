@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RestWithASPNETUdemy.Controllers
@@ -16,9 +13,10 @@ namespace RestWithASPNETUdemy.Controllers
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
-                var sum = ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber);
+                var sum = CovertToDecimal(firstNumber) + CovertToDecimal(secondNumber);
                 return Ok(sum.ToString());
             }
+
             return BadRequest("Invalid Input");
         }
 
@@ -28,9 +26,10 @@ namespace RestWithASPNETUdemy.Controllers
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
-                var sum = ConvertToDecimal(firstNumber) - ConvertToDecimal(secondNumber);
+                var sum = CovertToDecimal(firstNumber) - CovertToDecimal(secondNumber);
                 return Ok(sum.ToString());
             }
+
             return BadRequest("Invalid Input");
         }
 
@@ -40,10 +39,10 @@ namespace RestWithASPNETUdemy.Controllers
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
-                var sum = ConvertToDecimal(firstNumber) / ConvertToDecimal(secondNumber);
-                return Ok(sum.ToString());
+                var division = CovertToDecimal(firstNumber) / CovertToDecimal(secondNumber);
+                return Ok(division.ToString());
             }
-            return BadRequest("Invalid Input");
+            return Ok("Invalid Input");
         }
 
         // GET api/values/multiplication/5/5
@@ -52,28 +51,40 @@ namespace RestWithASPNETUdemy.Controllers
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
-                var sum = ConvertToDecimal(firstNumber) * ConvertToDecimal(secondNumber);
-                return Ok(sum.ToString());
+                var multiplication = CovertToDecimal(firstNumber) * CovertToDecimal(secondNumber);
+                return Ok(multiplication.ToString());
             }
-            return BadRequest("Invalid Input");
+            return Ok("Invalid Input");
         }
 
-        // GET api/values/media/5/5
-        [HttpGet("media/{firstNumber}/{secondNumber}")]
-        public IActionResult Media(string firstNumber, string secondNumber)
+        // GET api/values/mean/5/5
+        [HttpGet("mean/{firstNumber}/{secondNumber}")]
+        public IActionResult Mean(string firstNumber, string secondNumber)
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
-                var sum = (ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber)) / 2;
-                return Ok(sum.ToString());
+                var mean = (CovertToDecimal(firstNumber) + CovertToDecimal(secondNumber)) / 2;
+                return Ok(mean.ToString());
             }
-            return BadRequest("Invalid Input");
+            return Ok("Invalid Input");
         }
 
-        private decimal ConvertToDecimal(string number)
+        // GET api/values/square-root/5
+        [HttpGet("square-root/{number}")]
+        public IActionResult SquareRoot(string number)
+        {
+            if (IsNumeric(number))
+            {
+                var squareRoot = Math.Sqrt((double)CovertToDecimal(number));
+                return Ok(squareRoot.ToString());
+            }
+            return Ok("Invalid Input");
+        }
+
+        private decimal CovertToDecimal(string number)
         {
             decimal decimalValue;
-            if (decimal.TryParse(number,out decimalValue))
+            if (decimal.TryParse(number, out decimalValue))
             {
                 return decimalValue;
             }
